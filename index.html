@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>AMSCO AP Human Geography Units 1-4</title>
-    <link rel="icon" href="/mnt/data/favicon-32x32.png" type="image/png">
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,7 +18,56 @@
             color: white;
             padding: 1rem 0;
             text-align: center;
+            position: relative;
         }
+        header img {
+            height: 80px;
+            width: auto;
+        }
+        nav {
+            background: #005fa3;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            position: relative;
+        }
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+        }
+        nav a:hover {
+            background: #004480;
+        }
+        /* Dropdown styling */
+        .dropdown > a::after {
+            content: " ▾";
+            font-size: 0.7em;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #005fa3;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.1);
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .container {
             width: 90%;
             max-width: 1200px;
@@ -71,14 +120,38 @@
                 });
             });
         });
+
+        function startFlashcards() {
+            // Placeholder: Implement flashcards functionality here
+            alert("Flashcards function not implemented yet.");
+        }
+
+        function startQuiz() {
+            // Placeholder: Implement quiz functionality here
+            alert("Quiz function not implemented yet.");
+        }
     </script>
 </head>
 <body>
     <header>
-        <img src="/mnt/data/favicon-32x32.png" alt="AP Human Geography Logo" style="height: 100px; width: auto; display: block; margin: 0 auto;">
+        <img src="images/favicon-32x32.png" alt="AP Human Geography Logo">
         <h1>AMSCO AP Human Geography Units 1-4</h1>
         <p>Explore terms and memorize efficiently!</p>
     </header>
+
+    <nav>
+        <ul>
+            <li class="dropdown">
+                <a href="#">Units</a>
+                <ul class="dropdown-content">
+                    <li><a href="#unit1">Unit 1</a></li>
+                    <li><a href="#unit2">Unit 2</a></li>
+                    <li><a href="#unit3">Unit 3</a></li>
+                    <li><a href="#unit4">Unit 4</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 
     <div class="container">
         <section class="unit" id="unit1">
@@ -90,85 +163,74 @@
             <div class="term"><strong>Clustering:</strong> A spatial pattern where phenomena are grouped closely together.</div>
             <div class="term"><strong>Dispersal:</strong> A spatial pattern where phenomena are spread apart with more space between them.</div>
             <div class="term"><strong>Elevation:</strong> The height of a geographical location relative to sea level, often depicted on isoline maps.</div>
-            <div class="term"><strong>Scale:</strong> The relationship between distance on a map and the actual distance on Earth. Can be represented as a ratio or bar scale.</div>
+            <div class="term"><strong>Scale:</strong> The relationship between distance on a map and the actual distance on Earth.</div>
             <div class="term"><strong>Large-Scale Map:</strong> A map that shows a smaller area with greater detail.</div>
             <div class="term"><strong>Small-Scale Map:</strong> A map that shows a larger area with less detail.</div>
-            <div class="term"><strong>Choropleth Map:</strong> A thematic map that uses different colors to represent data density or values across regions.</div>
-            <div class="term"><strong>Dot Distribution Map:</strong> A thematic map using dots to visualize the location or density of phenomena.</div>
-            <div class="term"><strong>Graduated Symbol Map:</strong> A thematic map using symbols of varying sizes to indicate the magnitude of phenomena.</div>
-            <div class="term"><strong>Isoline Map:</strong> A thematic map using lines to connect points of equal value, commonly used for elevation or weather data.</div>
-            <div class="term"><strong>Cartogram:</strong> A thematic map that distorts the size of regions based on data values, such as population.</div>
-            <div class="term"><strong>Mercator Projection:</strong> A map projection that preserves direction but distorts sizes, especially near the poles.</div>
-            <div class="term"><strong>Peters Projection:</strong> A map projection that preserves area size but distorts shapes.</div>
-            <div class="term"><strong>Robinson Projection:</strong> A compromise map projection that balances size and shape distortions across the map.</div>
-            <div class="term"><strong>Geographic Information System (GIS):</strong> Software for analyzing and visualizing spatial data, used for research or decision-making.</div>
-            <div class="term"><strong>Global Positioning System (GPS):</strong> A satellite-based system used to determine the precise location of an object or place on Earth.</div>
-            <div class="term"><strong>Remote Sensing:</strong> The process of gathering data about Earth's surface from satellites or aerial imagery.</div>
+            <div class="term"><strong>Choropleth Map:</strong> Uses different colors to represent data density across regions.</div>
+            <div class="term"><strong>Dot Distribution Map:</strong> Uses dots to visualize the location or density of phenomena.</div>
+            <div class="term"><strong>Graduated Symbol Map:</strong> Uses symbols of varying sizes to indicate magnitude.</div>
+            <div class="term"><strong>Isoline Map:</strong> Connects points of equal value with lines, often for elevation or weather.</div>
+            <div class="term"><strong>Cartogram:</strong> Distorts the size of regions based on data values, such as population.</div>
+            <div class="term"><strong>Mercator Projection:</strong> Preserves direction but distorts sizes near the poles.</div>
+            <div class="term"><strong>Peters Projection:</strong> Preserves area size but distorts shapes.</div>
+            <div class="term"><strong>Robinson Projection:</strong> Balances size and shape distortions across the map.</div>
+            <div class="term"><strong>Geographic Information System (GIS):</strong> Analyzes and visualizes spatial data.</div>
+            <div class="term"><strong>Global Positioning System (GPS):</strong> Uses satellites to determine precise location.</div>
+            <div class="term"><strong>Remote Sensing:</strong> Gathering data about Earth's surface from satellites or aerial imagery.</div>
         </section>
 
-        <section class=\"unit\" id=\"unit2\">
+        <section class="unit" id="unit2">
             <h2>Unit 2: Population and Migration</h2>
-            <div class="term"><strong>Population Distribution:</strong> The pattern of where people live on Earth, influenced by physical factors like climate, landforms, and water bodies, and human factors like culture, economics, history, and politics.</div>
-            <div class="term"><strong>Population Density:</strong> A measure of how many people occupy a given unit of land. Calculated using three methods: arithmetic, physiological, and agricultural density.</div>
-            <div class="term"><strong>Arithmetic Density:</strong> The total population divided by the total land area, which includes uninhabitable areas.</div>
-            <div class="term"><strong>Physiological Density:</strong> The total population divided by the amount of arable land, providing insight into the pressure on land to produce food.</div>
-            <div class="term"><strong>Agricultural Density:</strong> The number of farmers divided by the amount of arable land, indicating levels of mechanization in agriculture.</div>
-            <div class="term"><strong>Dependency Ratio:</strong> The ratio of dependents (under 15 and over 65) to the working-age population, showing the economic burden on the labor force.</div>
-            <div class="term"><strong>Sex Ratio:</strong> The number of males compared to females in a population. Globally, it is approximately 101 males to 100 females.</div>
-            <div class="term"><strong>Population Pyramid:</strong> A graphical representation of the age and sex structure of a population, used to interpret growth trends (e.g., rapid growth, stable, or decline).</div>
-            <div class="term"><strong>Crude Birth Rate (CBR):</strong> The number of births per 1,000 people in a given year.</div>
-            <div class="term"><strong>Total Fertility Rate (TFR):</strong> The average number of children a woman will have during her childbearing years, typically between ages 15 and 49.</div>
-            <div class="term"><strong>Crude Death Rate (CDR):</strong> The number of deaths per 1,000 people in a given year.</div>
-            <div class="term"><strong>Rate of Natural Increase (RNI):</strong> The difference between the crude birth rate and crude death rate, indicating population growth or decline without migration.</div>
-            <div class="term"><strong>Doubling Time:</strong> The time it takes for a population to double in size, based on its growth rate.</div>
-            <div class="term"><strong>Carrying Capacity:</strong> The maximum population an environment can sustain based on available resources, influenced by factors like technology and consumption.</div>
-            <div class="term"><strong>Demographic Transition Model (DTM):</strong> A model showing population changes over time as a society industrializes, progressing through five stages from high birth and death rates to population decline.</div>
-            <div class="term"><strong>Epidemiological Transition Model (ETM):</strong> A model explaining changes in death rates due to diseases, transitioning from infectious diseases (e.g., plague) to degenerative diseases (e.g., cancer).</div>
-            <div class="term"><strong>Malthusian Theory:</strong> A theory predicting population growth would outpace food production, leading to famine, which was later disproved due to agricultural advancements.</div>
-            <div class="term"><strong>Pro-Natalist Policies:</strong> Government policies encouraging higher birth rates, often through incentives like parental leave and child care support.</div>
-            <div class="term"><strong>Anti-Natalist Policies:</strong> Government policies aimed at reducing birth rates, such as China's one-child policy.</div>
-            <div class="term"><strong>Push Factors:</strong> Negative factors driving people to leave a location, such as war, famine, or persecution.</div>
-            <div class="term"><strong>Pull Factors:</strong> Positive factors attracting people to a location, such as job opportunities or political stability.</div>
-            <div class="term"><strong>Intervening Obstacles:</strong> Challenges migrants face when moving to a new location, such as political barriers or lack of resources.</div>
-            <div class="term"><strong>Intervening Opportunities:</strong> Factors that encourage migrants to settle in a location along their journey instead of reaching their original destination.</div>
-            <div class="term"><strong>Forced Migration:</strong> Migration compelled by external factors, such as slavery, war, or persecution.</div>
-            <div class="term"><strong>Voluntary Migration:</strong> Migration based on a person's choice, often for economic or social reasons.</div>
-            <div class="term"><strong>Arithmetic Density:</strong> The total number of people divided by the total land area.</div>
-            <div class="term"><strong>Physiological Density:</strong> The number of people per unit area of arable land.</div>
-            <div class="term"><strong>Agricultural Density:</strong> The number of farmers per unit area of farmland.</div>
-            <div class="term"><strong>Demographic Transition Model:</strong> A model that describes population change over time through stages of birth and death rates.</div>
-            <div class="term"><strong>Malthusian Theory:</strong> The theory that population growth will outpace agricultural production, leading to famine and conflict.</div>
-            <div class="term"><strong>Carrying Capacity:</strong> The maximum number of individuals that an environment can sustainably support.</div>
-            <div class="term"><strong>Dependency Ratio:</strong> The number of people under age 15 and over age 64 compared to the number of people active in the labor force.</div>
-            <div class="term"><strong>Population Pyramid:</strong> A bar graph representing the distribution of population by age and sex.</div>
-            <div class="term"><strong>Fertility Rate:</strong> The average number of children a woman will have during her childbearing years.</div>
-            <div class="term"><strong>Mortality Rate:</strong> The number of deaths in a population per unit of time.</div>
+            <div class="term"><strong>Population Distribution:</strong> The pattern of where people live, influenced by physical and human factors.</div>
+            <div class="term"><strong>Population Density:</strong> A measure of how many people occupy a given unit of land.</div>
+            <div class="term"><strong>Arithmetic Density:</strong> Total population divided by total land area.</div>
+            <div class="term"><strong>Physiological Density:</strong> Total population divided by the amount of arable land.</div>
+            <div class="term"><strong>Agricultural Density:</strong> Number of farmers divided by the amount of arable land.</div>
+            <div class="term"><strong>Dependency Ratio:</strong> Ratio of dependents (under 15, over 65) to the working-age population.</div>
+            <div class="term"><strong>Sex Ratio:</strong> Number of males compared to females in a population.</div>
+            <div class="term"><strong>Population Pyramid:</strong> A graph showing age and sex structure of a population.</div>
+            <div class="term"><strong>Crude Birth Rate (CBR):</strong> Births per 1,000 people per year.</div>
+            <div class="term"><strong>Total Fertility Rate (TFR):</strong> Average number of children a woman has in her lifetime.</div>
+            <div class="term"><strong>Crude Death Rate (CDR):</strong> Deaths per 1,000 people per year.</div>
+            <div class="term"><strong>Rate of Natural Increase (RNI):</strong> CBR - CDR, indicating population growth or decline without migration.</div>
+            <div class="term"><strong>Doubling Time:</strong> Time it takes for a population to double at current growth rates.</div>
+            <div class="term"><strong>Carrying Capacity:</strong> Maximum population an environment can sustain.</div>
+            <div class="term"><strong>Demographic Transition Model (DTM):</strong> Shows how population changes as a society industrializes.</div>
+            <div class="term"><strong>Epidemiological Transition Model (ETM):</strong> Explains changing death rates due to disease patterns.</div>
+            <div class="term"><strong>Malthusian Theory:</strong> Idea that population growth could outpace food production.</div>
+            <div class="term"><strong>Pro-Natalist Policies:</strong> Policies encouraging higher birth rates.</div>
+            <div class="term"><strong>Anti-Natalist Policies:</strong> Policies aimed at reducing birth rates.</div>
+            <div class="term"><strong>Push Factors:</strong> Negative conditions prompting people to leave a location.</div>
+            <div class="term"><strong>Pull Factors:</strong> Positive conditions attracting people to a new location.</div>
+            <div class="term"><strong>Intervening Obstacles:</strong> Factors that impede migration to a certain destination.</div>
+            <div class="term"><strong>Intervening Opportunities:</strong> Factors that cause migrants to settle before reaching their original destination.</div>
+            <div class="term"><strong>Forced Migration:</strong> Migration compelled by external factors (e.g., war, persecution).</div>
+            <div class="term"><strong>Voluntary Migration:</strong> Migration by choice, often for economic or social reasons.</div>
         </section>
 
         <section class="unit" id="unit3">
             <h2>Unit 3: Cultural Patterns and Processes</h2>
-            <div class="term"><strong>Cultural Landscape:</strong> The visible imprint of human activity and culture on the landscape.</div>
-            <div class="term"><strong>Cultural Diffusion:</strong> The spread of cultural beliefs and social activities from one group to another.</div>
-            <div class="term"><strong>Ethnocentrism:</strong> Evaluating other cultures based on the standards of one’s own culture.</div>
-            <div class="term"><strong>Language Family:</strong> A group of languages related through a common ancestral language.</div>
-            <div class="term"><strong>Globalization:</strong> The process by which businesses or other organizations develop international influence or start operating on an international scale.</div>
+            <div class="term"><strong>Cultural Landscape:</strong> The visible imprint of human activity on the environment.</div>
+            <div class="term"><strong>Cultural Diffusion:</strong> The spread of cultural beliefs and activities from one group to another.</div>
+            <div class="term"><strong>Ethnocentrism:</strong> Evaluating other cultures by the standards of one’s own culture.</div>
+            <div class="term"><strong>Language Family:</strong> A group of languages with a shared but distant origin.</div>
+            <div class="term"><strong>Globalization:</strong> The increasing interconnectedness of countries and cultures worldwide.</div>
             <div class="term"><strong>Ethnic Enclave:</strong> A geographic area with a high concentration of a particular ethnicity.</div>
-            <div class="term"><strong>Universalizing Religion:</strong> A religion that attempts to appeal to all people regardless of location or culture.</div>
-            <div class="term"><strong>Ethnic Religion:</strong> A religion that is closely tied to a specific ethnic group and does not seek converts.</div>
+            <div class="term"><strong>Universalizing Religion:</strong> A religion that seeks to appeal to all people, not just those in a particular location.</div>
+            <div class="term"><strong>Ethnic Religion:</strong> A religion closely tied to a specific ethnic group that does not seek new converts widely.</div>
         </section>
 
-        <section class=\"unit\" id=\"unit4\">
+        <section class="unit" id="unit4">
             <h2>Unit 4: Political Patterns and Processes</h2>
-            <div class="term"><strong>Sovereignty:</strong> The authority of a state to govern itself without outside interference.</div>
-            <div class="term"><strong>Sovereignty:</strong> The authority of a state to govern itself without outside interference.</div>
-            <div class="term"><strong>Nation-State:</strong> A state whose territory corresponds to a single ethnicity that has been transformed into a nationality.</div>
-            <div class="term"><strong>Centrifugal Forces:</strong> Forces that divide a state, such as internal religious, linguistic, or ideological differences.</div>
-            <div class="term"><strong>Centripetal Forces:</strong> Forces that unify a state, such as a shared sense of identity or a common culture.</div>
-            <div class="term"><strong>Boundary Types:</strong> Includes geometric, physical, cultural, and superimposed boundaries.</div>
-            <div class="term"><strong>Federal State:</strong> A system of government in which power is divided between a central authority and constituent units.</div>
-            <div class="term"><strong>Unitary State:</strong> A state governed as a single entity with a central authority.</div>
-            <div class="term"><strong>Devolution:</strong> The transfer of power from a central government to regional governments within a state.</div>
-            <div class="term"><strong>Gerrymandering:</strong> The process of redrawing legislative boundaries to benefit the party in power.</div>
+            <div class="term"><strong>Sovereignty:</strong> The authority of a state to govern itself without external interference.</div>
+            <div class="term"><strong>Nation-State:</strong> A state where the boundaries correspond to a single nation.</div>
+            <div class="term"><strong>Centrifugal Forces:</strong> Forces that divide a state (e.g., internal conflicts).</div>
+            <div class="term"><strong>Centripetal Forces:</strong> Forces that unify a state (e.g., shared national identity).</div>
+            <div class="term"><strong>Boundary Types:</strong> Geometric, physical, cultural, and superimposed boundaries.</div>
+            <div class="term"><strong>Federal State:</strong> Power is divided between a central government and regional governments.</div>
+            <div class="term"><strong>Unitary State:</strong> A state governed as a single unit by a central authority.</div>
+            <div class="term"><strong>Devolution:</strong> The transfer of power from a central government to local or regional governments.</div>
+            <div class="term"><strong>Gerrymandering:</strong> Redrawing political boundaries to favor a particular party or group.</div>
         </section>
 
         <div class="memorization-tools">
@@ -178,7 +240,9 @@
     </div>
 
     <script>
-        const terms = { /* ... same content here ... */ };
+        const terms = {
+            // Populate this object if needed
+        };
     </script>
 </body>
 </html>

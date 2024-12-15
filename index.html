@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AMSCO AP Human Geography</title>
+    <link rel="icon" href="images/favicon-32x32.png" type="image/png">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+            color: #ddd;
+            scroll-behavior: smooth;
+            user-select: none; /* Disable text selection */
+            cursor: default;   /* Default cursor everywhere */
+        }
+
+        a, button, input[type=text], select, input[type=checkbox] {
+            cursor: pointer; /* Show pointer for interactive elements */
+        }
+
+        header {
+            background: #000;
+            color: #f4f4f9;
+            padding: 1rem 0;
+            text-align: center;
+            position: relative;
+            border-bottom: 2px solid #b30000;
+        }
+        header img {
+            height: 80px;
+            width: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        header h1 {
+            margin: 0.5rem 0 0.2rem;
+            font-weight: 700;
+        }
+        header p {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            border-bottom: 2px solid #b30000;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            position: relative;
+        }
+        nav a {
+            display: block;
+            color: #ddd;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: background 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background: #b30000;
+            color: #fff;
+        }
+
+        /* Dropdown styling */
+        .dropdown {
+            position: relative;
+        }
+        .dropdown > a::after {
+            content: " ▾";
+            font-size: 0.7em;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: #1a1a1a;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.5);
+            min-width: 160px;
+            border: 1px solid #b30000;
+            top: 100%;
+            left: 0;
+            z-index: 9999;
+        }
+        .dropdown-content a {
+            padding: 0.5rem 1rem;
+            white-space: nowrap;
+            color: #ddd;
+        }
+        .dropdown-content a:hover {
+            background: #b30000;
+            color: #fff;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/fatalis-bg.jpg') center/cover no-repeat;
+            padding: 4rem 1rem;
+            text-align: center;
+            color: #f4f4f9;
+            border-bottom: 2px solid #b30000;
+        }
+
+        /* Personality Effect (Hero Heading Glow) */
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px #b30000;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 2px 2px #b30000, 0 0 10px #b30000;
+            }
+            100% {
+                text-shadow: 2px 2px #f00, 0 0 20px #f00;
+            }
+        }
+
+        .hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .term-of-day {
+            background: rgba(0,0,0,0.5);
+            display: inline-block;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid #b30000;
+            margin-top:20px;
+        }
+        .term-of-day strong {
+            color: #f00;
+        }
+
+        .hero-images {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 2rem;
+        }
+        .hero-images div {
+            flex: 1 1 300px;
+            max-width: 400px;
+            border: 1px solid #b30000;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .hero-images img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .unit {
+            background: #1a1a1a;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            transition: box-shadow 0.3s ease;
+        }
+        .unit:hover {
+            box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+        }
+        .unit h2 {
+            color: #b30000;
+            cursor: pointer;
+            position: relative;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+            padding-left: 30px;
+        }
+        .unit h2::before {
+            content: url('images/dragon-icon.png');
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform: translateY(20%);
+        }
+        .unit h2:hover {
+            color: #f00;
+        }
+
+        .term {
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #444;
+            border-radius: 5px;
+            display: none;
+            background: #111;
+            transition: all 0.3s ease;
+        }
+        .unit.open .term {
+            display: block;
+        }
+        .term strong {
+            color: #b30000;
+        }
+
+        .memorization-tools {
+            margin: 40px 0;
+            display: flex;
+            justify-content: space-around;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #b30000;
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+        button:hover {
+            background: #f00;
+        }
+
+        /* Back to top button */
+        #back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #b30000;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            cursor: pointer;
+            font-size: 1.5rem;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+            z-index:999;
+        }
+        #back-to-top:hover {
+            opacity: 1;
+        }
+
+        footer {
+            background: #000;
+            color: #ddd;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 40px;
+            font-size: 0.9rem;
+            border-top: 2px solid #b30000;
+        }
+
+        footer a {
+            color: #b30000;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration:underline;
+        }
+
+        /* Test Page */
+        .test-container {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            margin-top: 20px;
+        }
+        .test-container h2 {
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+        .test-mode-toggle {
+            margin-bottom: 10px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            color: #f4f4f9;
+        }
+        .question input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #444;
+            background: #111;
+            color: #ddd;
+        }
+        .test-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .options {
+            margin-top: 5px;
+        }
+        .options button {
+            display: block;
+            background: #333;
+            margin: 5px 0;
+            text-align: left;
+            padding: 8px;
+            width: 100%;
+            border: 1px solid #444;
+        }
+        .options button:hover {
+            background: #b30000;
+            color: #fff;
+        }
+
+        /* Flashcards Page */
+        .flashcards-container {
+            background: #1a1a1a;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            text-align: center;
+            position: relative;
+        }
+
+        .flashcards-container h2 {
+            color: #b30000;
+            margin-bottom: 1rem;
+        }
+
+        .flashcards-extra-controls {
+            margin-bottom: 20px;
+        }
+
+        .flashcard-progress {
+            margin-bottom: 10px;
+        }
+        .flashcard-progress span {
+            display:inline-block;
+            margin:0 5px;
+        }
+
+        .flashcard-area {
+            margin-bottom: 20px;
+        }
+
+        .flashcard {
+            position: relative;
+            width: 300px;
+            height: 200px;
+            perspective: 1000px;
+            margin: 0 auto 20px;
+        }
+        .flashcard-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            background: #111;
+            border: 1px solid #444;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #ddd;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-term {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        .flashcard-definition {
+            margin-top: 10px;
+            color: #bbb;
+        }
+        .flashcard-note {
+            margin-top: 10px;
+            font-style: italic;
+            color: #f0f0f0;
+        }
+        .flashcard-hard {
+            position: absolute;
+            top: 5px; 
+            right: 5px;
+            font-size: 0.8rem;
+            background: #b30000;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .orientation-toggle {
+            margin-top: 10px;
+        }
+
+        .flashcard-settings {
+            margin-bottom: 20px;
+        }
+        .flashcard-settings label {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .flashcard-settings select, .flashcard-settings input[type=checkbox] {
+            margin-left:5px;
+        }
+
+        .search-container {
+            background: #1a1a1a;
+            padding:20px;
+            border-radius:5px;
+            border:1px solid #333;
+            box-shadow:0 2px 5px rgba(0,0,0,0.5);
+            margin-top:20px;
+        }
+        .search-container h2 {
+            color: #b30000;
+            margin-bottom:1rem;
+        }
+        .search-container input[type=text] {
+            width: 80%;
+            padding:8px;
+            border-radius:5px;
+            border:1px solid #444;
+            background:#111;
+            color:#ddd;
+        }
+        .search-container button {
+            margin-left:10px;
+        }
+        .search-results {
+            margin-top:20px;
+        }
+        .search-result-item {
+            margin:5px 0;
+        }
+        .search-result-item a {
+            color:#b30000;
+            text-decoration:none;
+        }
+        .search-result-item a:hover {
+            text-decoration:underline;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                padding: 0.5rem 1rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .hero-images {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="images/favicon-32x32.png" alt="AP Human Geography Logo">
+        <h1>AMSCO AP Human Geography Units 1-4</h1>
+        <p>Explore terms and memorize efficiently!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Units</a>
+                <ul class="dropdown-content">
+                    <li><a href="#unit1">Unit 1</a></li>
+                    <li><a href="#unit2">Unit 2</a></li>
+                    <li><a href="#unit3">Unit 3</a></li>
+                    <li><a href="#unit4">Unit 4</a></li>
+                </ul>
+            </li>
+            <li><a href="#test-section">Test</a></li>
+            <li><a href="#flashcards-section">Flashcards</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="hero">
+        <h2>Master the AP Human Geography Content</h2>
+        <p>Delve into cultural, political, and geographical processes. Let these monstrous terms be tamed under your command.</p>
+        <div class="term-of-day" id="term-of-day"></div>
+        <div class="hero-images">
+            <div>
+                <img src="images/image1.jpg" alt="Hero Image 1">
+            </div>
+            <div>
+                <img src="images/image2.jpg" alt="Hero Image 2">
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Search Feature -->
+        <div class="search-container">
+            <h2>Search Terms</h2>
+            <input type="text" id="search-input" placeholder="Type a term...">
+            <button onclick="searchTerms()">Search</button>
+            <div class="search-results" id="search-results"></div>
+        </div>
+
+        <!-- Unit Sections (no terms needed here as all terms are in JS object) -->
+        <section class="unit" id="unit1">
+            <h2>Unit 1: Thinking Geographically</h2>
+<div class="term"><strong>Absolute Location:</strong> The exact position of a place on the Earth's surface, often given in latitude and longitude.</div>
+<div class="term"><strong>Relative Location:</strong> The position of a place in relation to another place.</div>
+            <div class="term"><strong>Map Projection:</strong> A method for representing the curved surface of the Earth on a flat map, with varying degrees of distortion.</div>
+            <div class="term"><strong>Spatial Patterns:</strong> Describes where phenomena are located on Earth and how they are arranged, such as clustering or dispersal.</div>
+            <div class="term"><strong>Clustering:</strong> A spatial pattern where phenomena are grouped closely together.</div>
+            <div class="term"><strong>Dispersal:</strong> A spatial pattern where phenomena are spread apart with more space between them.</div>
+            <div class="term"><strong>Elevation:</strong> The height of a geographical location relative to sea level, often depicted on isoline maps.</div>
+            <div class="term"><strong>Scale:</strong> The relationship between distance on a map and the actual distance on Earth. Can be represented as a ratio or bar scale.</div>
+            <div class="term"><strong>Large-Scale Map:</strong> A map that shows a smaller area with greater detail.</div>
+            <div class="term"><strong>Small-Scale Map:</strong> A map that shows a larger area with less detail.</div>
+            <div class="term"><strong>Choropleth Map:</strong> A thematic map that uses different colors to represent data density or values across regions.</div>
+            <div class="term"><strong>Dot Distribution Map:</strong> A thematic map using dots to visualize the location or density of phenomena.</div>
+            <div class="term"><strong>Graduated Symbol Map:</strong> A thematic map using symbols of varying sizes to indicate the magnitude of phenomena.</div>
+            <div class="term"><strong>Isoline Map:</strong> A thematic map using lines to connect points of equal value, commonly used for elevation or weather data.</div>
+            <div class="term"><strong>Cartogram:</strong> A thematic map that distorts the size of regions based on data values, such as population.</div>
+            <div class="term"><strong>Mercator Projection:</strong> A map projection that preserves direction but distorts sizes, especially near the poles.</div>
+            <div class="term"><strong>Peters Projection:</strong> A map projection that preserves area size but distorts shapes.</div>
+            <div class="term"><strong>Robinson Projection:</strong> A compromise map projection that balances size and shape distortions across the map.</div>
+            <div class="term"><strong>Geographic Information System (GIS):</strong> Software for analyzing and visualizing spatial data, used for research or decision-making.</div>
+            <div class="term"><strong>Global Positioning System (GPS):</strong> A satellite-based system used to determine the precise location of an object or place on Earth.</div>
+            <div class="term"><strong>Remote Sensing:</strong> The process of gathering data about Earth's surface from satellites or aerial imagery.</div
+
+        </section>
+        <section class="unit" id="unit2">
+            <h2>Unit 2: Population and Migration</h2>
+            <div class="term"><strong>Population Distribution:</strong> The pattern of where people live, influenced by physical and human factors.</div>
+      <div class="term"><strong>Population Density:</strong> A measure of how many people occupy a given unit of land.</div>
+            <div class="term"><strong>Arithmetic Density:</strong> Total population divided by total land area.</div>
+            <div class="term"><strong>Physiological Density:</strong> Total population divided by the amount of arable land.</div>
+            <div class="term"><strong>Agricultural Density:</strong> Number of farmers divided by the amount of arable land.</div>
+            <div class="term"><strong>Dependency Ratio:</strong> Ratio of dependents (under 15, over 65) to the working-age population.</div>
+            <div class="term"><strong>Sex Ratio:</strong> Number of males compared to females in a population.</div>
+            <div class="term"><strong>Population Pyramid:</strong> A graph showing age and sex structure of a population.</div>
+            <div class="term"><strong>Crude Birth Rate (CBR):</strong> Births per 1,000 people per year.</div>
+            <div class="term"><strong>Total Fertility Rate (TFR):</strong> Average number of children a woman has in her lifetime.</div>
+            <div class="term"><strong>Crude Death Rate (CDR):</strong> Deaths per 1,000 people per year.</div>
+            <div class="term"><strong>Rate of Natural Increase (RNI):</strong> CBR - CDR, indicating population growth or decline without migration.</div>
+            <div class="term"><strong>Doubling Time:</strong> Time it takes for a population to double at current growth rates.</div>
+            <div class="term"><strong>Carrying Capacity:</strong> Maximum population an environment can sustain.</div>
+            <div class="term"><strong>Demographic Transition Model (DTM):</strong> Shows how population changes as a society industrializes.</div>
+            <div class="term"><strong>Epidemiological Transition Model (ETM):</strong> Explains changing death rates due to disease patterns.</div>
+            <div class="term"><strong>Malthusian Theory:</strong> Idea that population growth could outpace food production.</div>
+            <div class="term"><strong>Pro-Natalist Policies:</strong> Policies encouraging higher birth rates.</div>
+            <div class="term"><strong>Anti-Natalist Policies:</strong> Policies aimed at reducing birth rates.</div>
+            <div class="term"><strong>Push Factors:</strong> Negative conditions prompting people to leave a location.</div>
+            <div class="term"><strong>Pull Factors:</strong> Positive conditions attracting people to a new location.</div>
+            <div class="term"><strong>Intervening Obstacles:</strong> Factors that impede migration to a certain destination.</div>
+            <div class="term"><strong>Intervening Opportunities:</strong> Factors that cause migrants to settle before reaching their original destination.</div>
+            <div class="term"><strong>Forced Migration:</strong> Migration compelled by external factors (e.g., war, persecution).</div>
+            <div class="term"><strong>Voluntary Migration:</strong> Migration by choice, often for economic or social reasons.</div>    
+        
+        </section>
+        <section class="unit" id="unit3">
+            <h2>Unit 3: Cultural Patterns and Processes</h2>
+  <div class="term"><strong>Culture:</strong> Shared practices, technologies, attitudes, and behaviors transmitted by a society.</div>
+  <div class="term"><strong>Cultural Traits:</strong> Visible and invisible attributes that combine to form a group’s culture, such as language, clothing, architecture, and land use.</div>
+    <div class="term"><strong>Culture Iceberg Model:</strong> A way to visualize culture in which observable cultural traits are above the surface, while underlying values, beliefs, and thought patterns lie below.</div>
+    <div class="term"><strong>Food Preferences:</strong> Culinary traditions and tastes that are influenced by cultural history and geography.</div>
+    <div class="term"><strong>Architecture (Cultural):</strong> The style and design of buildings and structures that reflect the cultural values, beliefs, and resources of the people who build them.</div>
+    <div class="term"><strong>Land Use:</strong> The ways in which a culture utilizes the environment, including agricultural practices, residential patterns, and urban design, reflecting cultural values.</div>
+    <div class="term"><strong>Cultural Relativism:</strong> The evaluation of a culture by its own standards, seeking to understand a culture on its own terms without judgment.</div>
+    <div class="term"><strong>Ethnocentrism:</strong> Judging another culture by the standards of one’s own culture, often leading to the perception that one’s own culture is superior.</div>
+    <div class="term"><strong>Xenophobia:</strong> A fear or dislike of foreigners or strangers, often arising from ethnocentric views.</div>
+    <div class="term"><strong>Cultural Landscape:</strong> The visible imprint of human activity and culture on the landscape, including built environments, agricultural systems, signs, and sacred sites.</div>
+    <div class="term"><strong>Agricultural and Industrial Practices:</strong> Ways societies produce goods and food that shape the cultural landscape, from local farming techniques to globalized industrial activities.</div>
+    <div class="term"><strong>Sacred Spaces:</strong> Areas within the cultural landscape that hold religious or spiritual significance, such as temples, churches, mosques, or synagogues.</div>
+    <div class="term"><strong>Linguistic Characteristics:</strong> Language-related features of a cultural landscape, such as multilingual signs or place names that reflect cultural identity.</div>
+    <div class="term"><strong>Sequent Occupance:</strong> The idea that successive societies leave their cultural imprints on a place, contributing to the cumulative cultural landscape.</div>
+    <div class="term"><strong>Traditional Architecture:</strong> Building styles that use locally available materials, reflecting local traditions, environment, and cultural values.</div>
+    <div class="term"><strong>Postmodern Architecture:</strong> A style of architecture that arose as a reaction against modernism, often emphasizing form, individuality, and cultural expression.</div>
+    <div class="term"><strong>Ethnicity:</strong> A group’s cultural identity based on shared traits such as language, religion, traditions, and ancestral origins.</div>
+    <div class="term"><strong>Gender and the Cultural Landscape:</strong> How cultural attitudes about gender roles and norms influence the way spaces and places are organized or used.</div>
+    <div class="term"><strong>Ethnic Enclaves:</strong> Clusters of people of the same culture, often surrounded by a different cultural group, shaping the local cultural landscape.</div>
+    <div class="term"><strong>Indigenous Communities:</strong> Groups native to a region who maintain traditional cultures and often have autonomy in designated territories or reservations.</div>
+    <div class="term"><strong>Placemaking:</strong> The process by which people create, shape, and give meaning to places, reflecting cultural values and identities.</div>
+    <div class="term"><strong>Sense of Place:</strong> The feelings and attitudes people have about a location, shaped by personal experiences, cultural attachments, and historical meaning.</div>
+    <div class="term"><strong>Dialect:</strong> A regional variation of a language, characterized by distinct vocabulary, spelling, and pronunciation.</div>
+    <div class="term"><strong>Centripetal Forces:</strong> Cultural characteristics or events that unify a society and strengthen the state, such as a shared religion or language.</div>
+    <div class="term"><strong>Centrifugal Forces:</strong> Cultural characteristics or events that divide a society, creating instability or tension, such as differing religious sects or ethnic conflicts.</div>
+    <div class="term"><strong>Cultural Diffusion:</strong> The spread of cultural traits from a cultural hearth to other areas, often resulting in changes to both cultures.</div>
+    <div class="term"><strong>Relocation Diffusion:</strong> The spread of cultural traits through the physical movement of people from one place to another.</div>
+    <div class="term"><strong>Expansion Diffusion:</strong> The spread of cultural traits outward from the hearth while the people or communities of the hearth remain in place.</div>
+    <div class="term"><strong>Contagious Diffusion:</strong> A form of expansion diffusion where a cultural trait spreads rapidly, widely, and continuously to adjacent regions.</div>
+    <div class="term"><strong>Hierarchical Diffusion:</strong> A form of expansion diffusion in which a cultural trait spreads from people or nodes of authority or influence down to others.</div>
+    <div class="term"><strong>Stimulus Diffusion:</strong> A form of expansion diffusion in which a cultural trait inspires a new innovation that retains some original elements but also transforms them.</div>
+    <div class="term"><strong>Lingua Franca:</strong> A language used among speakers of different native languages for the purposes of trade and communication.</div>
+    <div class="term"><strong>Creolization:</strong> The blending of two or more languages or cultures into a new, distinct cultural form or language (Creole languages).</div>
+    <div class="term"><strong>Globalization:</strong> The increasing interconnectedness of the world’s economies, societies, and cultures, facilitating more rapid cultural exchange.</div>
+    <div class="term"><strong>Urbanization:</strong> The movement of people from rural areas to cities, influencing cultural diffusion as diverse groups interact in urban environments.</div>
+    <div class="term"><strong>Time-Space Convergence:</strong> The idea that distant places are brought closer together in terms of time taken to travel, communicate, and interact due to technological advancements.</div>
+    <div class="term"><strong>Cultural Convergence:</strong> When cultures become more similar due to frequent interactions and the widespread adoption of shared traits.</div>
+    <div class="term"><strong>Cultural Divergence:</strong> When a culture restricts outside influences and maintains distinct traditions, resisting cultural diffusion and assimilation.</div>
+    <div class="term"><strong>Universalizing Religions:</strong> Religions that seek to unite people from a wide variety of cultural backgrounds, often diffusing widely through various types of expansion and relocation diffusion.</div>
+    <div class="term"><strong>Ethnic Religions:</strong> Religions closely tied to a particular ethnic group or location, generally not seeking new converts, and thus remaining more localized.</div>
+    <div class="term"><strong>Toponyms:</strong> Place names that can reflect cultural diffusion, heritage, and changes in power or religion over time.</div>
+    <div class="term"><strong>Acculturation:</strong> The process in which individuals or groups adopt some traits of another culture while retaining aspects of their own cultural identity.</div>
+    <div class="term"><strong>Assimilation:</strong> The process by which a person or group’s culture comes to resemble those of another group, often resulting in the loss of the minority group’s original cultural identity.</div>
+    <div class="term"><strong>Syncretism:</strong> The blending of two or more cultural traits or beliefs to form a new, distinct cultural trait or practice.</div>
+    <div class="term"><strong>Multiculturalism:</strong> The coexistence of diverse cultures in the same space, allowing each culture to maintain distinct cultural traits while interacting with others.</div>
+                  
+        </section>
+        <section class="unit" id="unit4">
+            <h2>Unit 4: Political Patterns and Processes</h2>
+ <div class="term"><strong>Sovereignty:</strong> The authority of a state to govern itself without external interference.</div>
+            <div class="term"><strong>Nation-State:</strong> A state whose territory corresponds to a single cultural group that has become a nationality.</div>
+    <div class="term"><strong>Centrifugal Forces:</strong> Factors that divide or tend to pull a state apart, such as internal conflicts or social divisions.</div>
+    <div class="term"><strong>Centripetal Forces:</strong> Factors that unite or bind a state together, such as a strong national identity or shared culture.</div>
+    <div class="term"><strong>Boundary Types:</strong> Different kinds of borders, including geometric, physical, cultural, and superimposed boundaries.</div>
+    <div class="term"><strong>Federal State:</strong> A state with a division of power between a central government and regional governments.</div>
+    <div class="term"><strong>Unitary State:</strong> A state governed as a single entity with a central authority holding most of the power.</div>
+    <div class="term"><strong>Devolution:</strong> The transfer of political power from the central government to lower levels of government, often in response to regional demands.</div>
+    <div class="term"><strong>Gerrymandering:</strong> The manipulation of electoral district boundaries to favor one party or group.</div> 
+ <div class="term"><strong>State:</strong> A politically organized territory with a permanent population, defined boundaries, and a government with sovereignty.</div>
+    <div class="term"><strong>Nation:</strong> A group of people with a shared cultural heritage, history, and often a common language or religion, seeking political identity.</div>
+    <div class="term"><strong>Stateless Nation:</strong> A cultural group that does not have its own independent state or sovereignty over its territory.</div>
+    <div class="term"><strong>Multinational State:</strong> A country that contains more than one nation within its borders.</div>
+    <div class="term"><strong>Multistate Nation:</strong> A nation that stretches across borders and across states.</div>
+    <div class="term"><strong>Autonomous Region:</strong> An area within a state that has a high degree of self-government and freedom from the central authority.</div>
+    <div class="term"><strong>Semiautonomous Region:</strong> A region that has some degree of self-rule but is not completely independent.</div>
+    <div class="term"><strong>Self-Determination:</strong> The right of a people to determine their own political status and form their own allegiances and government.</div>
+    <div class="term"><strong>Irredentism:</strong> A movement to unite people who share a cultural or ethnic background but are divided by a national boundary.</div>
+    <div class="term"><strong>Colonialism:</strong> The practice of one country establishing settlements and imposing its political and economic control in another territory.</div>
+    <div class="term"><strong>Imperialism:</strong> The broader policy of extending a country's influence and power through diplomacy, military force, or economic dominance.</div>
+    <div class="term"><strong>Independence Movements:</strong> Efforts by groups of people to gain political autonomy or full sovereignty over their territory.</div>
+    <div class="term"><strong>Genocide:</strong> The intentional attempt to destroy, in whole or in part, a national, ethnic, racial, or religious group.</div>
+    <div class="term"><strong>Ethnic Cleansing:</strong> The forced removal or elimination of an ethnic group from a particular area to create a more homogeneous region.</div>
+    <div class="term"><strong>Nationalism:</strong> A strong feeling of pride in and devotion to one’s nation, often promoting its interests above others.</div>
+    <div class="term"><strong>Regionalism:</strong> Loyalty to a distinct region with a population that shares similarities, potentially stronger than loyalty to a state as a whole.</div>
+    <div class="term"><strong>Ethnonationalism:</strong> Support for the interests of a particular ethnic group, often seeking greater autonomy or independence.</div>
+    <div class="term"><strong>Balkanization:</strong> The fragmentation of a state into smaller, often hostile units along ethno-linguistic lines.</div>
+    <div class="term"><strong>Shatter belt:</strong> A region caught between stronger, conflicting external forces, under persistent stress, and often fragmented by aggressive rivals.</div>
+    <div class="term"><strong>Globalization:</strong> The increasing interconnectedness of the world’s economies, societies, and cultures through networks of communication and trade.</div>
+    <div class="term"><strong>Supranationalism:</strong> The process of states organizing into one or more international institutions or organizations that influence and limit their sovereignty.</div>
+    <div class="term"><strong>Democratization:</strong> The transition from autocratic forms of government to more representative and democratic systems.</div>
+    <div class="term"><strong>Transnational Corporations:</strong> Companies that conduct business on a global scale and are not strongly connected to any single country.</div>
+    <div class="term"><strong>Time-Space Compression:</strong> The reduction in the time it takes for information, people, and goods to travel, due to improvements in transportation and communication.</div>
+    <div class="term"><strong>Choke Points:</strong> Narrow passages, such as straits or canals, through which transportation and trade must pass, often strategically important.</div>
+    <div class="term"><strong>Territoriality:</strong> The attempt to influence or control people and events by asserting control over a geographic area.</div>
+    <div class="term"><strong>Neocolonialism:</strong> The indirect economic, political, or cultural influence exerted by developed states on less developed states, often a legacy of colonialism.</div>
+    <div class="term"><strong>Boundary:</strong> An invisible line that marks the extent of a state’s territory and its control.</div>
+    <div class="term"><strong>Defined Boundary:</strong> A boundary established by a legal document or treaty to separate political entities.</div>
+    <div class="term"><strong>Delimited Boundary:</strong> A boundary drawn on a map to show the limits of a space.</div>
+    <div class="term"><strong>Demarcated Boundary:</strong> A boundary identified by physical objects placed on the landscape, such as a fence, wall, or sign.</div>
+    <div class="term"><strong>Antecedent Boundary:</strong> A boundary drawn before a large population was present, often based on physical features.</div>
+    <div class="term"><strong>Subsequent Boundary (Ethnographic Boundary):</strong> A boundary drawn after the development of the cultural landscape, to accommodate religious, ethnic, or linguistic differences.</div>
+    <div class="term"><strong>Superimposed Boundary:</strong> A boundary drawn by outside powers, often ignoring existing cultural patterns.</div>
+    <div class="term"><strong>Relic Boundary:</strong> A boundary that no longer exists as an international border but remnants of its existence remain on the landscape.</div>
+    <div class="term"><strong>Geometric Boundary:</strong> A straight line or arc drawn by people that does not closely follow any physical feature.</div>
+    <div class="term"><strong>Consequent Boundary:</strong> A type of subsequent boundary that takes into account cultural or physical differences when drawn.</div>
+    <div class="term"><strong>Cultural Consequent Boundary:</strong> A boundary that aligns with differences in cultural traits such as religion or language.</div>
+    <div class="term"><strong>Physical Consequent Boundary:</strong> A boundary that aligns with natural features in the landscape, such as mountains or rivers.</div>
+    <div class="term"><strong>Open Boundary:</strong> A boundary where crossing is unimpeded, often allowing free movement of people and goods.</div>
+    <div class="term"><strong>Militarized Boundary:</strong> A heavily guarded boundary that discourages crossing and movement through use of military presence or barriers.</div>
+    <div class="term"><strong>Administered Boundary:</strong> A boundary that is managed, maintained, and regulated by a government or legal entity.</div>
+    <div class="term"><strong>Controlled Border:</strong> A boundary where a country regulates and monitors the entry of people and goods, often requiring passports or visas.</div>
+    <div class="term"><strong>Territorial Sea:</strong> The area of sea extending up to 12 nautical miles from a state’s coastline, over which a state has sovereignty.</div>
+    <div class="term"><strong>Contiguous Zone:</strong> A maritime zone adjacent to a territorial sea, up to 24 nautical miles, where a state can enforce laws on customs, immigration, and sanitation.</div>
+    <div class="term"><strong>Exclusive Economic Zone (EEZ):</strong> Up to 200 nautical miles from a state’s shore, where the state has the right to explore, exploit, and manage natural resources.</div>
+    <div class="term"><strong>High Seas:</strong> Areas of the ocean beyond the EEZ, open to all states and not under any single state’s jurisdiction.</div>
+    <div class="term"><strong>Reapportionment:</strong> The redistribution of legislative seats according to population changes, often after a census.</div>
+    <div class="term"><strong>Redistricting:</strong> The redrawing of internal political boundaries, usually to ensure equal population in electoral districts.</div>
+    <div class="term"><strong>Cracking:</strong> A form of gerrymandering where a concentrated group of voters is split into several districts to dilute their influence.</div>
+    <div class="term"><strong>Packing:</strong> A gerrymandering technique where like-minded voters are concentrated in one district to reduce their influence in other districts.</div>
+    <div class="term"><strong>Stacking:</strong> A gerrymandering strategy that merges minority populations with majority populations to reduce minority representation.</div>
+    <div class="term"><strong>Hijacking:</strong> A gerrymandering tactic that forces two incumbents of the same party to run against each other, ensuring one will lose.</div>
+    <div class="term"><strong>Kidnapping:</strong> A gerrymandering method where a district is redrawn so that an incumbent’s supporters are placed in a district in which they have less influence.</div>
+    <div class="term"><strong>Annexation:</strong> Legally adding territory to a city or state.</div>
+    <div class="term"><strong>Sub nationalism:</strong> When people give their primary allegiance to a traditional group or ethnicity rather than the state.</div>
+    <div class="term"><strong>Economic Supranationalism:</strong> Multiple countries joining together to achieve benefits in trade, commerce, and financial markets.</div>
+    <div class="term"><strong>World Trade Organization (WTO):</strong> A global organization dealing with the rules of trade between nations to ensure fair and predictable trade flows.</div>
+    <div class="term"><strong>Organization of Petroleum Exporting Countries (OPEC):</strong> An international organization of oil-producing countries that coordinates and unifies petroleum policies.</div>
+    <div class="term"><strong>Association of Southeast Asian Nations (ASEAN):</strong> A regional organization promoting economic growth, peace, and collaboration among Southeast Asian countries.</div>
+    <div class="term"><strong>African Union (AU):</strong> A continental organization promoting economic development, peace, security, and unity among African states.</div>
+    <div class="term"><strong>Arctic Council:</strong> A regional organization focused on sustainable development and environmental protection in the Arctic region.</div>
+    <div class="term"><strong>European Union (EU):</strong> A political and economic union of European states, aiming for economic integration and political cooperation.</div>
+    <div class="term"><strong>United Nations (UN):</strong> An international organization formed to increase cooperation, peace, and security among member states worldwide.</div>
+    <div class="term"><strong>North Atlantic Treaty Organization (NATO):</strong> A military alliance of North American and European states committed to mutual defense.</div>
+    <div class="term"><strong>United States-Mexico-Canada Agreement (USMCA):</strong> A trade agreement that replaced NAFTA, aiming to promote free trade and economic cooperation in North America.</div>
+    <div class="term"><strong>Census:</strong> An official count or survey of a population, typically recording details such as age, sex, occupation, and ethnicity.</div>
+
+        </section>
+
+        <div class="memorization-tools">
+            <button onclick="startFlashcards()">Flashcards</button>
+            <button onclick="startQuiz()">Quiz Yourself</button>
+        </div>
+    </div>
+
+    <!-- Test Section -->
+    <div class="container">
+        <section id="test-section">
+            <div class="test-container">
+                <h2>Test Yourself</h2>
+                <p>Select test mode and then generate the quiz with "Quiz Yourself" above.</p>
+                <div class="test-mode-toggle">
+                    <label>
+                        <input type="radio" name="testMode" value="free" checked> Free Response
+                    </label>
+                    <label>
+                        <input type="radio" name="testMode" value="multiple"> Multiple Choice
+                    </label>
+                </div>
+                <div id="test-questions"></div>
+                <div class="test-buttons">
+                    <button onclick="gradeTest()">Grade Now</button>
+                </div>
+                <div id="test-results"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Flashcards Section -->
+    <div class="container">
+        <section id="flashcards-section">
+            <div class="flashcards-container">
+                <h2>Flashcards</h2>
+                <div class="flashcards-extra-controls">
+                    <button onclick="toggleShowHardOnly()">Show Only Hard Cards: Off</button>
+                    <button onclick="startSessionTimer()">Start Session Timer</button>
+                    <button onclick="stopSessionTimer()">Stop Session Timer</button>
+                    <span id="session-timer">Time: 00:00</span>
+                </div>
+
+                <!-- New Flashcards Settings -->
+                <div class="flashcard-settings">
+                    <label>
+                        Unit Filter:
+                        <select id="flashcard-unit-filter" onchange="updateFlashcardDeck()">
+                            <option value="all">All Units</option>
+                            <option value="Unit1">Unit 1</option>
+                            <option value="Unit2">Unit 2</option>
+                            <option value="Unit3">Unit 3</option>
+                            <option value="Unit4">Unit 4</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" id="flashcard-randomize" onchange="updateFlashcardDeck()"> Randomize
+                    </label>
+                </div>
+
+                <div class="flashcard-progress">
+                    <span id="flashcard-index">1</span> / <span id="flashcard-total">1</span>
+                </div>
+                <div class="flashcard-area">
+                    <div class="flashcard" id="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front">
+                                <div class="flashcard-term" id="flashcard-term"></div>
+                                <div class="flashcard-hard" id="flashcard-hard-label" style="display:none;">HARD</div>
+                            </div>
+                            <div class="flashcard-back">
+                                <div class="flashcard-definition" id="flashcard-definition"></div>
+                                <div class="flashcard-note" id="flashcard-note"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flashcard-controls">
+                    <button onclick="prevFlashcard()">Prev</button>
+                    <button onclick="flipFlashcard()">Flip</button>
+                    <button onclick="nextFlashcard()">Next</button>
+                </div>
+                <div class="flashcard-controls">
+                    <button onclick="toggleHard()">Toggle Hard</button>
+                    <button onclick="addNote()">Add Note</button>
+                </div>
+                <div class="orientation-toggle">
+                    <button onclick="changeOrientationLock()">Lock Orientation: Unlocked</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <button id="back-to-top" title="Back to top">↑</button>
+
+    <footer>
+        <p>&copy; 2023 AMSCO AP Human Geography. Inspired by Fatalis. All Rights Reserved.</p>
+        <p>Follow me on Instagram: <a href="#" target="_blank">@myinstagram</a></p>
+    </footer>
+
+    <script>
+        const terms = {
+          "Unit1": [
+{"term":"Absolute Location","definition":"The exact position of a place on the Earth's surface, often given in latitude and longitude."},
+{"term":"Relative Location","definition":"The position of a place in relation to another place."},
+{"term":"Map Projection","definition":"A method for representing the Earth’s surface on a flat map."},
+{"term":"Spatial Patterns","definition":"Distribution and arrangement of phenomena on Earth."},
+{"term":"Clustering","definition":"Grouping phenomena closely together."},
+{"term":"Dispersal","definition":"Phenomena spread out with space between them."},
+{"term":"Elevation","definition":"Height above sea level."},
+{"term":"Scale","definition":"Relationship between map distance and actual distance."},
+{"term":"Large-Scale Map","definition":"Shows small area in detail."},
+{"term":"Small-Scale Map","definition":"Shows large area with less detail."},
+{"term":"Choropleth Map","definition":"Uses colors to represent data density."},
+{"term":"Dot Distribution Map","definition":"Uses dots to show distribution of phenomena."},
+{"term":"Graduated Symbol Map","definition":"Symbols sized by data value."},
+{"term":"Isoline Map","definition":"Connects areas of equal value with lines."},
+{"term":"Cartogram","definition":"Distorts size to represent data values."},
+{"term":"Mercator Projection","definition":"Preserves direction, distorts size near poles."},
+{"term":"Peters Projection","definition":"Preserves area, distorts shape."},
+{"term":"Robinson Projection","definition":"Compromise projection balancing size & shape."},
+{"term":"Geographic Information System (GIS)","definition":"Software for analyzing and visualizing spatial data."},
+{"term":"Global Positioning System (GPS)","definition":"Uses satellites to find exact location."},
+{"term":"Remote Sensing","definition":"Collecting data from satellites/aircraft."}
+          ],
+          "Unit2": [
+{"term":"Population Distribution","definition":"Pattern of where people live."},
+{"term":"Population Density","definition":"Number of people per area unit."},
+{"term":"Arithmetic Density","definition":"Total population/total land area."},
+{"term":"Physiological Density","definition":"People per unit of arable land."},
+{"term":"Agricultural Density","definition":"Farmers per unit of arable land."},
+{"term":"Dependency Ratio","definition":"Ratio of dependents to working-age population."},
+{"term":"Sex Ratio","definition":"Number of males per 100 females."},
+{"term":"Population Pyramid","definition":"Age-sex structure graph of a population."},
+{"term":"Crude Birth Rate (CBR)","definition":"Births/1000 people/year."},
+{"term":"Total Fertility Rate (TFR)","definition":"Average children per woman."},
+{"term":"Crude Death Rate (CDR)","definition":"Deaths/1000 people/year."},
+{"term":"Rate of Natural Increase (RNI)","definition":"CBR - CDR, ignoring migration."},
+{"term":"Doubling Time","definition":"Time to double population."},
+{"term":"Carrying Capacity","definition":"Max population environment can sustain."},
+{"term":"Demographic Transition Model (DTM)","definition":"Stages of population change with industrialization."},
+{"term":"Epidemiological Transition Model (ETM)","definition":"Shifts in disease patterns by development stage."},
+{"term":"Malthusian Theory","definition":"Population outgrows food supply idea."},
+{"term":"Pro-Natalist Policies","definition":"Encourage higher birth rates."},
+{"term":"Anti-Natalist Policies","definition":"Aim to reduce birth rates."},
+{"term":"Push Factors","definition":"Negative conditions causing emigration."},
+{"term":"Pull Factors","definition":"Positive conditions attracting immigrants."},
+{"term":"Intervening Obstacles","definition":"Barriers preventing reaching destination."},
+{"term":"Intervening Opportunities","definition":"Factors causing settlement before final destination."},
+{"term":"Forced Migration","definition":"Involuntary relocation (war, persecution)."},
+{"term":"Voluntary Migration","definition":"Relocation by choice."}
+          ],
+          "Unit3": [
+{"term":"Culture","definition":"Shared practices, attitudes, technologies."},
+{"term":"Cultural Traits","definition":"Visible/invisible attributes of a group’s culture."},
+{"term":"Culture Iceberg Model","definition":"Visible traits above, values below surface."},
+{"term":"Food Preferences","definition":"Culturally influenced culinary tastes."},
+{"term":"Architecture (Cultural)","definition":"Building styles reflecting culture."},
+{"term":"Land Use","definition":"How environment is utilized culturally."},
+{"term":"Cultural Relativism","definition":"Judging a culture by its own standards."},
+{"term":"Ethnocentrism","definition":"Judging another culture by one’s own."},
+{"term":"Xenophobia","definition":"Fear/dislike of foreigners."},
+{"term":"Cultural Landscape","definition":"Visible imprint of human culture."},
+{"term":"Agricultural and Industrial Practices","definition":"Ways goods are produced shaping landscape."},
+{"term":"Sacred Spaces","definition":"Religious/spiritual significant areas."},
+{"term":"Linguistic Characteristics","definition":"Language features showing cultural identity."},
+{"term":"Sequent Occupance","definition":"Successive cultures leave layered imprints."},
+{"term":"Traditional Architecture","definition":"Local materials, reflecting tradition and environment."},
+{"term":"Postmodern Architecture","definition":"Emphasizes form, individuality, cultural expression."},
+{"term":"Ethnicity","definition":"Cultural identity based on shared traits."},
+{"term":"Gender and the Cultural Landscape","definition":"Cultural gender roles shaping spaces."},
+{"term":"Ethnic Enclaves","definition":"Cultural clusters within different cultural area."},
+{"term":"Indigenous Communities","definition":"Native groups maintaining traditional cultures."},
+{"term":"Placemaking","definition":"People shaping and giving meaning to places."},
+{"term":"Sense of Place","definition":"Feelings/attitudes about a location’s meaning."},
+{"term":"Dialect","definition":"Regional language variation."},
+{"term":"Centripetal Forces","definition":"Unifying cultural factors."},
+{"term":"Centrifugal Forces","definition":"Divisive cultural factors."},
+{"term":"Cultural Diffusion","definition":"Spread of cultural traits."},
+{"term":"Relocation Diffusion","definition":"Traits spread via people moving."},
+{"term":"Expansion Diffusion","definition":"Spread outward from a hearth."},
+{"term":"Contagious Diffusion","definition":"Rapid, widespread diffusion to adjacent areas."},
+{"term":"Hierarchical Diffusion","definition":"From authority/nodes down to others."},
+{"term":"Stimulus Diffusion","definition":"Trait inspires a related but changed trait."},
+{"term":"Lingua Franca","definition":"A common language for communication/trade."},
+{"term":"Creolization","definition":"Blending of languages/cultures into new form."},
+{"term":"Globalization","definition":"Worldwide interconnectedness of economies/cultures."},
+{"term":"Urbanization","definition":"Movement to cities, intensifying cultural interaction."},
+{"term":"Time-Space Convergence","definition":"Distant places are closer in travel/comm time."},
+{"term":"Cultural Convergence","definition":"Cultures becoming similar."},
+{"term":"Cultural Divergence","definition":"Cultures resisting outside influences, staying distinct."},
+{"term":"Universalizing Religions","definition":"Religions seeking worldwide appeal."},
+{"term":"Ethnic Religions","definition":"Religions tied to specific ethnic groups."},
+{"term":"Toponyms","definition":"Place names reflecting cultural changes."},
+{"term":"Acculturation","definition":"Adopting some traits of another culture."},
+{"term":"Assimilation","definition":"Losing original cultural identity, adopting another."},
+{"term":"Syncretism","definition":"Blending multiple cultural traits into one."},
+{"term":"Multiculturalism","definition":"Coexistence of diverse cultures in one space."}
+          ],
+          "Unit4": [
+{"term":"Sovereignty","definition":"Authority of a state to govern itself."},
+{"term":"Nation-State","definition":"A state with boundaries coinciding with one cultural group."},
+{"term":"Centrifugal Forces","definition":"Forces that divide a state."},
+{"term":"Centripetal Forces","definition":"Forces that unify a state."},
+{"term":"Boundary Types","definition":"Geometric, physical, cultural, superimposed boundaries."},
+{"term":"Federal State","definition":"Power divided between central and regions."},
+{"term":"Unitary State","definition":"State governed as one unit by central authority."},
+{"term":"Devolution","definition":"Transfer of power to lower government levels."},
+{"term":"Gerrymandering","definition":"Manipulating district boundaries for advantage."},
+{"term":"State","definition":"Politically organized territory with sovereignty."},
+{"term":"Nation","definition":"Group with shared culture/history seeking identity."},
+{"term":"Stateless Nation","definition":"Cultural group without an independent state."},
+{"term":"Multinational State","definition":"A state with multiple nations inside."},
+{"term":"Multistate Nation","definition":"A nation spread across multiple states."},
+{"term":"Autonomous Region","definition":"Area with high self-governing freedom."},
+{"term":"Semiautonomous Region","definition":"Area with some self-rule but not full."},
+{"term":"Self-Determination","definition":"Right of people to choose their governance."},
+{"term":"Irredentism","definition":"Unifying culturally similar people separated by a boundary."},
+{"term":"Colonialism","definition":"Establishing settlements and control in another territory."},
+{"term":"Imperialism","definition":"Extending power via diplomacy/force."},
+{"term":"Independence Movements","definition":"Groups seeking political autonomy/sovereignty."},
+{"term":"Genocide","definition":"Intentional destruction of a group."},
+{"term":"Ethnic Cleansing","definition":"Forced removal of an ethnic group."},
+{"term":"Nationalism","definition":"Strong pride in one's nation."},
+{"term":"Regionalism","definition":"Loyalty to a region over state."},
+{"term":"Ethnonationalism","definition":"Ethnic group’s pursuit of autonomy/independence."},
+{"term":"Balkanization","definition":"Splitting a state into smaller, hostile units."},
+{"term":"Shatterbelt","definition":"Region caught between external conflicts."},
+{"term":"Globalization","definition":"Worldwide interconnectedness of economies/cultures."},
+{"term":"Supranationalism","definition":"States forming organizations limiting some sovereignty."},
+{"term":"Democratization","definition":"Moving from autocratic to democratic governance."},
+{"term":"Transnational Corporations","definition":"Companies operating across multiple countries."},
+{"term":"Time-Space Compression","definition":"Reduced travel/communication time between places."},
+{"term":"Choke Points","definition":"Narrow routes for transport/trade, strategically vital."},
+{"term":"Territoriality","definition":"Influencing control over an area."},
+{"term":"Neocolonialism","definition":"Indirect influence over developing states post-colonialism."},
+{"term":"Boundary","definition":"Invisible line marking a state's territory."},
+{"term":"Defined Boundary","definition":"Boundary established by legal documentation."},
+{"term":"Delimited Boundary","definition":"Boundary drawn on a map."},
+{"term":"Demarcated Boundary","definition":"Boundary marked by physical objects."},
+{"term":"Antecedent Boundary","definition":"Boundary drawn before population presence."},
+{"term":"Subsequent Boundary (Ethnographic Boundary)","definition":"Boundary after cultural landscape formed."},
+{"term":"Superimposed Boundary","definition":"Boundary forced by outside powers."},
+{"term":"Relic Boundary","definition":"No longer functional boundary but visible imprint."},
+{"term":"Geometric Boundary","definition":"Straight line boundary not following features."},
+{"term":"Consequent Boundary","definition":"Boundary accounting for cultural/physical differences."},
+{"term":"Cultural Consequent Boundary","definition":"Boundary aligning with cultural traits."},
+{"term":"Physical Consequent Boundary","definition":"Boundary aligning with natural features."},
+{"term":"Open Boundary","definition":"Boundary allowing free crossing."},
+{"term":"Militarized Boundary","definition":"Heavily guarded boundary."},
+{"term":"Administered Boundary","definition":"Managed and regulated boundary."},
+{"term":"Controlled Border","definition":"Regulated boundary, often needing passports/visas."},
+{"term":"Territorial Sea","definition":"12 nautical miles of full state sovereignty at sea."},
+{"term":"Contiguous Zone","definition":"24 nautical miles, limited state control."},
+{"term":"Exclusive Economic Zone (EEZ)","definition":"200 nautical miles for resource rights."},
+{"term":"High Seas","definition":"Beyond EEZ, open to all."},
+{"term":"Reapportionment","definition":"Redistributing legislative seats by population."},
+{"term":"Redistricting","definition":"Redrawing boundaries for equal population."},
+{"term":"Cracking","definition":"Splitting concentrated voters into multiple districts."},
+{"term":"Packing","definition":"Concentrating like voters in one district."},
+{"term":"Stacking","definition":"Merging minority with majority populations."},
+{"term":"Hijacking","definition":"Forcing two incumbents to compete."},
+{"term":"Kidnapping","definition":"Moving a rep’s supporters to disadvantage them."},
+{"term":"Annexation","definition":"Legally adding territory to a city/state."},
+{"term":"Subnationalism","definition":"Primary allegiance to local group rather than state."},
+{"term":"Economic Supranationalism","definition":"Countries joining for trade/financial gain."},
+{"term":"World Trade Organization (WTO)","definition":"Global body setting trade rules."},
+{"term":"Organization of Petroleum Exporting Countries (OPEC)","definition":"Oil producers coordinating petroleum policies."},
+{"term":"Association of Southeast Asian Nations (ASEAN)","definition":"SE Asian states fostering economic growth/peace."},
+{"term":"African Union (AU)","definition":"African states promoting unity, development, peace."},
+{"term":"Arctic Council","definition":"Arctic states focusing on sustainable development."},
+{"term":"European Union (EU)","definition":"European states integrating economies/politics."},
+{"term":"United Nations (UN)","definition":"Global organization for peace and cooperation."},
+{"term":"North Atlantic Treaty Organization (NATO)","definition":"Military alliance for mutual defense."},
+{"term":"United States-Mexico-Canada Agreement (USMCA)","definition":"Trade deal replacing NAFTA in N. America."},
+{"term":"Census","definition":"Official population count with demographic details."}
+          ]
+        };
+
+        let allTerms = [...terms.Unit1, ...terms.Unit2, ...terms.Unit3, ...terms.Unit4];
+
+        // Surprise Feature: Term of the Day
+        function showTermOfTheDay() {
+            if (allTerms.length > 0) {
+                shuffleArray(allTerms);
+                const pick = allTerms[0];
+                document.getElementById('term-of-day').innerHTML = `<strong>Term of the Day:</strong> ${pick.term} - ${pick.definition}`;
+            } else {
+                document.getElementById('term-of-day').innerText = "No terms available.";
+            }
+        }
+
+        // Search Feature
+        function searchTerms() {
+            const query = document.getElementById('search-input').value.trim().toLowerCase();
+            const resultsDiv = document.getElementById('search-results');
+            resultsDiv.innerHTML = '';
+
+            if (!query) {
+                resultsDiv.innerHTML = '<p>Please enter a term to search.</p>';
+                return;
+            }
+
+            let results = [];
+            for (let u in terms) {
+                terms[u].forEach(item => {
+                    if (item.term.toLowerCase().includes(query)) {
+                        results.push({unit: u, term: item.term});
+                    }
+                });
+            }
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = '<p>No matches found.</p>';
+                return;
+            }
+
+            results.forEach(r => {
+                const uName = r.unit.charAt(0).toUpperCase()+r.unit.slice(1);
+                const item = document.createElement('div');
+                item.classList.add('search-result-item');
+                item.innerHTML = `<a href="#${r.unit.toLowerCase()}" onclick="highlightTerm('${r.unit}','${r.term}')">${r.term}</a> (in ${uName})`;
+                resultsDiv.appendChild(item);
+            });
+        }
+
+        function highlightTerm(unitName, termName) {
+            const unitSec = document.getElementById(unitName.toLowerCase());
+            if (unitSec && !unitSec.classList.contains('open')) {
+                unitSec.classList.add('open');
+            }
+            unitSec.scrollIntoView({behavior:'smooth'});
+            const termsEls = unitSec.querySelectorAll('.term');
+            termsEls.forEach(t => {
+                if (t.innerText.toLowerCase().includes(termName.toLowerCase())) {
+                    t.style.background = '#b30000';
+                    t.style.color = '#fff';
+                    setTimeout(() => {
+                        t.style.background = '#111';
+                        t.style.color = '#ddd';
+                    },2000);
+                }
+            });
+        }
+
+        // Test features
+        let selectedTerms = [];
+        let testMode = 'free';
+        let mcAnswers = {};
+
+        function startQuiz() {
+            document.getElementById('test-questions').innerHTML = '';
+            document.getElementById('test-results').innerHTML = '';
+
+            shuffleArray(allTerms);
+            selectedTerms = allTerms.slice(0, Math.min(30, allTerms.length));
+
+            const mode = document.querySelector('input[name="testMode"]:checked').value;
+            testMode = mode;
+
+            mcAnswers = {};
+
+            selectedTerms.forEach((t, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.classList.add('question');
+                qDiv.innerHTML = `<h3>Q${index+1}. ${t.definition}</h3>`;
+                if (testMode === 'free') {
+                    qDiv.innerHTML += `
+                        <input type="text" id="answer-${index}" placeholder="Type your answer...">
+                        <div style="margin-top:5px;">
+                            <button onclick="skipQuestion(${index})">Skip</button>
+                        </div>`;
+                } else {
+                    let options = generateMultipleChoiceOptions(t.term, 4);
+                    const optsHTML = options.map(opt => `<button onclick="selectOption(${index}, this)" data-answer="${opt}">${opt}</button>`).join('');
+                    qDiv.innerHTML += `<div class="options" id="options-${index}">${optsHTML}</div>`;
+                }
+
+                document.getElementById('test-questions').appendChild(qDiv);
+            });
+        }
+
+        function skipQuestion(i) {
+            const ans = document.getElementById(`answer-${i}`);
+            if (ans) ans.value = '';
+        }
+
+        function selectOption(i, btn) {
+            document.querySelectorAll(`#options-${i} button`).forEach(b => {
+                b.style.background = '#333';
+                b.style.color = '#ddd';
+            });
+            btn.style.background = '#b30000';
+            btn.style.color = '#fff';
+            mcAnswers[i] = btn.getAttribute('data-answer');
+        }
+
+        function gradeTest() {
+            let correct = 0;
+            let attempted = 0;
+
+            if (testMode === 'free') {
+                selectedTerms.forEach((t, i) => {
+                    const userAns = (document.getElementById(`answer-${i}`)?.value.trim() || '').toLowerCase();
+                    if (userAns !== '') {
+                        attempted++;
+                        if (fuzzyMatch(userAns, t.term.toLowerCase())) {
+                            correct++;
+                        }
+                    }
+                });
+            } else {
+                selectedTerms.forEach((t,i) => {
+                    if (mcAnswers[i]) {
+                        attempted++;
+                        if (mcAnswers[i].toLowerCase() === t.term.toLowerCase()) correct++;
+                    }
+                });
+            }
+
+            const score = attempted > 0 ? Math.round((correct / attempted) * 100) : 0;
+            document.getElementById('test-results').innerHTML = `
+                <p>You answered ${attempted} out of ${selectedTerms.length} questions.</p>
+                <p>Correct: ${correct}, Incorrect: ${attempted - correct}</p>
+                <p>Your score: ${score}%</p>
+            `;
+        }
+
+        function generateMultipleChoiceOptions(correctTerm, numOptions) {
+            let otherTerms = allTerms.map(x => x.term).filter(x => x !== correctTerm);
+            shuffleArray(otherTerms);
+            let chosen = [correctTerm, ...otherTerms.slice(0, numOptions-1)];
+            shuffleArray(chosen);
+            return chosen;
+        }
+
+        // Flashcards + Additional Features
+        let flashcardTerms = [];
+        let currentFlashcardIndex = 0;
+        let showHardOnly = false;
+        let flashcardNotes = JSON.parse(localStorage.getItem('flashcardNotes')||'{}');
+        let flashcardDifficulty = JSON.parse(localStorage.getItem('flashcardDifficulty')||'{}');
+
+        let studyTimer = null;
+        let studyTime = 0;
+
+        // Orientation lock states: 'unlocked', 'front', 'back'
+        let orientationLock = 'unlocked';
+
+        function updateFlashcardDeck() {
+            // Get chosen unit and randomization preference
+            const unitFilter = document.getElementById('flashcard-unit-filter').value;
+            const randomize = document.getElementById('flashcard-randomize').checked;
+
+            let filtered = [];
+            if (unitFilter === 'all') {
+                filtered = [...terms.Unit1, ...terms.Unit2, ...terms.Unit3, ...terms.Unit4];
+            } else {
+                filtered = [...terms[unitFilter]];
+            }
+
+            if (randomize) {
+                shuffleArray(filtered);
+            }
+
+            flashcardTerms = filtered;
+            currentFlashcardIndex = 0;
+            showFlashcard();
+        }
+
+        function showFlashcard() {
+            let deck = getFilteredDeck();
+            const card = document.getElementById('flashcard');
+            if (deck.length === 0) {
+                document.getElementById('flashcard-term').innerText = "No terms available.";
+                document.getElementById('flashcard-definition').innerText = "";
+                document.getElementById('flashcard-note').innerText = "";
+                document.getElementById('flashcard-hard-label').style.display = 'none';
+                document.getElementById('flashcard-total').innerText = '0';
+                document.getElementById('flashcard-index').innerText = '0';
+                card.classList.remove('flipped');
+                return;
+            }
+
+            if (currentFlashcardIndex >= deck.length) {
+                currentFlashcardIndex = 0;
+            }
+
+            const t = deck[currentFlashcardIndex];
+
+            card.classList.remove('flipped');
+            if (orientationLock === 'front') {
+                card.classList.remove('flipped');
+            } else if (orientationLock === 'back') {
+                card.classList.add('flipped');
+            }
+
+            document.getElementById('flashcard-term').innerText = t.term;
+            document.getElementById('flashcard-definition').innerText = t.definition;
+            let note = flashcardNotes[t.term] || "";
+            document.getElementById('flashcard-note').innerText = note ? `Note: ${note}` : '';
+            document.getElementById('flashcard-note').style.display = note ? 'block' : 'none';
+
+            let isHard = flashcardDifficulty[t.term] === true;
+            document.getElementById('flashcard-hard-label').style.display = isHard ? 'block' : 'none';
+
+            document.getElementById('flashcard-total').innerText = deck.length;
+            document.getElementById('flashcard-index').innerText = currentFlashcardIndex+1;
+        }
+
+        function startFlashcards() {
+            updateFlashcardDeck();
+        }
+
+        function flipFlashcard() {
+            if (orientationLock !== 'unlocked') return;
+            const card = document.getElementById('flashcard');
+            card.classList.toggle('flipped');
+        }
+
+        function nextFlashcard() {
+            let deck = getFilteredDeck();
+            if (deck.length > 0) {
+                currentFlashcardIndex = (currentFlashcardIndex + 1) % deck.length;
+                showFlashcard();
+            }
+        }
+
+        function prevFlashcard() {
+            let deck = getFilteredDeck();
+            if (deck.length > 0) {
+                currentFlashcardIndex = (currentFlashcardIndex - 1 + deck.length) % deck.length;
+                showFlashcard();
+            }
+        }
+
+        function toggleHard() {
+            let deck = getFilteredDeck();
+            if (deck.length === 0) return;
+            const t = deck[currentFlashcardIndex];
+            flashcardDifficulty[t.term] = !(flashcardDifficulty[t.term] === true);
+            localStorage.setItem('flashcardDifficulty', JSON.stringify(flashcardDifficulty));
+            showFlashcard();
+        }
+
+        function addNote() {
+            let deck = getFilteredDeck();
+            if (deck.length === 0) return;
+            const t = deck[currentFlashcardIndex];
+            let note = prompt("Enter your note:");
+            if (note !== null) {
+                flashcardNotes[t.term] = note.trim();
+                localStorage.setItem('flashcardNotes', JSON.stringify(flashcardNotes));
+                showFlashcard();
+            }
+        }
+
+        function toggleShowHardOnly() {
+            showHardOnly = !showHardOnly;
+            document.querySelector('.flashcards-extra-controls button:first-child').innerText = `Show Only Hard Cards: ${showHardOnly ? 'On' : 'Off'}`;
+            currentFlashcardIndex = 0;
+            showFlashcard();
+        }
+
+        function getFilteredDeck() {
+            let baseDeck = flashcardTerms;
+            if (!baseDeck) baseDeck = [];
+            if (!showHardOnly) return baseDeck;
+            return baseDeck.filter(t => flashcardDifficulty[t.term] === true);
+        }
+
+        // Orientation lock cycle: unlocked -> front -> back -> unlocked...
+        function changeOrientationLock() {
+            if (orientationLock === 'unlocked') orientationLock = 'front';
+            else if (orientationLock === 'front') orientationLock = 'back';
+            else orientationLock = 'unlocked';
+
+            document.querySelector('.orientation-toggle button').innerText = `Lock Orientation: ${orientationLock === 'unlocked' ? 'Unlocked' : orientationLock === 'front' ? 'Always Front' : 'Always Back'}`;
+            showFlashcard();
+        }
+
+        // Timer
+        function startSessionTimer() {
+            if (studyTimer) return;
+            studyTime = 0;
+            updateSessionTimer();
+            studyTimer = setInterval(() => {
+                studyTime++;
+                updateSessionTimer();
+            },1000);
+        }
+
+        function stopSessionTimer() {
+            if (studyTimer) {
+                clearInterval(studyTimer);
+                studyTimer = null;
+            }
+        }
+
+        function updateSessionTimer() {
+            let mins = Math.floor(studyTime / 60);
+            let secs = studyTime % 60;
+            let mStr = mins < 10 ? '0'+mins : mins;
+            let sStr = secs < 10 ? '0'+secs : secs;
+            document.getElementById('session-timer').innerText = `Time: ${mStr}:${sStr}`;
+        }
+
+        // Utility: shuffle array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+
+        // Fuzzy match using Levenshtein distance threshold
+        function fuzzyMatch(userAns, correctAns) {
+            const dist = levenshteinDistance(userAns, correctAns);
+            return dist <= 2; // Allow up to distance 2
+        }
+
+        function levenshteinDistance(a, b) {
+            const dp = [];
+            for (let i = 0; i <= a.length; i++) {
+                dp[i] = [i];
+            }
+            for (let j = 0; j <= b.length; j++) {
+                dp[0][j] = j;
+            }
+            for (let i = 1; i <= a.length; i++) {
+                for (let j = 1; j <= b.length; j++) {
+                    const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+                    dp[i][j] = Math.min(
+                        dp[i - 1][j] + 1,
+                        dp[i][j - 1] + 1,
+                        dp[i - 1][j - 1] + cost
+                    );
+                }
+            }
+            return dp[a.length][b.length];
+        }
+
+        function skipQuestion(i) {
+            const ans = document.getElementById(`answer-${i}`);
+            if (ans) ans.value = '';
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Unit toggle
+            document.querySelectorAll('.unit h2').forEach(header => {
+                header.addEventListener('click', () => {
+                    const unit = header.parentElement;
+                    unit.classList.toggle('open');
+                });
+            });
+
+            const backToTop = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.style.display = 'flex';
+                } else {
+                    backToTop.style.display = 'none';
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // Show term of the day
+            showTermOfTheDay();
+
+            // Initialize flashcards after user clicks "Flashcards" button or sets unit filter
+        });
+    </script>
+</body>
+</html>
